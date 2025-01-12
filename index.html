@@ -90,7 +90,13 @@
         <button onclick="darkMode()" class="chapterSmall"><i id="darkMode" class='fa fa-toggle-on' style='font-size:2rem;'></i></button>
         <br>
         <label for="darkMode" id="lblDarkMode">Activate Light Mode</label>
-        <p>v1.0 - Bible In Basic English - BBE Translation</p>
+        <br>   
+        <label for="version">Choose a Bible translation:</label> 
+        <select class="chapter" onchange="bibleTranslation()" name="version" id="version">
+            <option value="bbe">Bible In Basic English - BBE</option>
+            <option  value="kjv">King James Version - KJV</option>
+          </select>
+        <!-- <p>v1.0 - Bible In Basic English - BBE Translation</p> -->
         <p>Find me on social media</p>
         <a href="https://www.facebook.com/lennon.sfurtado" class="fa fa-facebook-official w3-hover-opacity " style="font-size: xx-large; text-decoration: none;"></a>
         <a href="https://www.instagram.com/lennonsfurtado/" class="fa fa-instagram w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>

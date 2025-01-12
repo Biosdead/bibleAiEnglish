@@ -35,20 +35,15 @@ const booksOfBible = [
 
 
 window.onload = function(){
-    populateBookList(); // Call the function to fill the header with the names of the books of the Bible
-    disableContextMenu(); // Disable context menu
-    loadDarkMode(); // load the current state of dark mode
+    populateBookList(); // Chamada da função para preencher o cabeçalho com os nomes dos livros da Bíblia
+    // disableContextMenu(); // Desabilita o menu de contexto
+    loadDarkMode(); // carregar o estado atual do darkmode
     loadData();
-    renderBookAndChapter(globalBook,globalChapter);
+    loadBibleVersion();
+    // renderBookAndChapter(globalBook,globalChapter);
     hideVerses();
     searchBarListener();
 }
-
-function translate(){
-
-}
-
-
 
 
 // Function to fill the header with the names of the books of the Bible
@@ -449,4 +444,51 @@ function fullscreen(imageSrc, verse) {
     imgSelected.setAttribute('src',imageSrc);
     document.getElementById("legenda").innerHTML = verse;
     openDialog();
+}
+
+function saveBibleVersion(){
+    // localStorage.setItem("bible", bible);
+    localStorage.setItem("selectorIndex", globalSelectorIndex);
+}
+
+function loadBibleVersion(){
+    if (localStorage.getItem("selectorIndex") != null) {
+    globalSelectorIndex = parseInt(localStorage.getItem("selectorIndex"));
+    document.getElementById("version").selectedIndex = globalSelectorIndex;
+    bibleTranslation();
+    }else{
+        globalSelectorIndex = 0; 
+        document.getElementById("version").selectedIndex = globalSelectorIndex;
+        bibleTranslation();
+    }
+}
+
+function bibleTranslation() {
+    let version = document.getElementById("version").selectedIndex;
+    switch (version) {
+        case 0:
+            bible = bibleBBE;
+            renderBookAndChapter(globalBook,globalChapter);
+            hideVerses();
+            globalSelectorIndex = 0;
+            saveBibleVersion();
+            document.getElementById("version").selectedIndex = globalSelectorIndex;
+            break;
+        case 1:
+            bible = bibleKJV;
+            renderBookAndChapter(globalBook,globalChapter);
+            hideVerses();
+            globalSelectorIndex = 1;
+            saveBibleVersion();
+            document.getElementById("version").selectedIndex = globalSelectorIndex;
+            break;  
+        default:
+            bible = bibleBBE;
+            renderBookAndChapter(globalBook,globalChapter);
+            hideVerses();
+            globalSelectorIndex = 0;
+            saveBibleVersion();
+            document.getElementById("version").selectedIndex = globalSelectorIndex;
+            break;
+    }
 }
