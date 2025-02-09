@@ -386,7 +386,7 @@ function darkModeChage(){
 
 
 function lightMode(){
-    r.style.setProperty('--font-family', "Poetsen One");
+    r.style.setProperty('--font-family', "PoetsenOne");
     r.style.setProperty('--backgorund-color', "#ffffff");
     r.style.setProperty('--font-color', '#333333');
     r.style.setProperty('--footer-color', '#f8f4e6');
@@ -396,7 +396,7 @@ function lightMode(){
 }
 
 function shadowMode(){
-    r.style.setProperty('--font-family', 'Courgette, cursive');
+    r.style.setProperty('--font-family', 'Courgette');
     r.style.setProperty('--backgorund-color', '#1f1f1f');
     r.style.setProperty('--font-color', '#ffffff');
     r.style.setProperty('--footer-color', '#2c2c2c');

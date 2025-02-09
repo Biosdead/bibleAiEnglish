@@ -1,3 +1,14 @@
+font-face {
+    font-family: Courgette;
+    src: url(./fonts/Courgette/Courgette-Regular.ttf);
+}
+
+font-face {
+    font-family: PoetsenOne;
+    src: url(./fonts/Poetsen_One/PoetsenOne-Regular.ttf);
+}
+
+
 :root{
     /* Dark mode */
     --font-family:"Courgette", cursive; /* "Poetsen One", sans-serif; */
