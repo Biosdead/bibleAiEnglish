@@ -319,8 +319,8 @@ function search(){
             for (let k = 0; k < bible[i].chapters[j].length; k++) {
                 if (bible[i].chapters[j][k].toLowerCase().includes(search.toLowerCase())) {
                     found = true;
-                    console.log("🚀 ~ search ~ bible[i].chapters[j][k]:", bible[i].chapters[j][k].toLowerCase());
-                    console.log("🚀 ~ search ~ search:", search)
+                    // console.log("🚀 ~ search ~ bible[i].chapters[j][k]:", bible[i].chapters[j][k].toLowerCase());
+                    // console.log("🚀 ~ search ~ search:", search)
                     renderBookChapterVerse(i,j,k);
                 }
             }
