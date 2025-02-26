@@ -503,3 +503,43 @@ function EraseUserData() {
 function backToBible(){
     window.location="./index.html";
 }
+
+
+async function shareVerse() {
+    let imgElement = document.getElementById("imgSelected"); // Captura a imagem selecionada
+    let verseText = document.getElementById("legenda").innerText; // Captura o versículo
+
+
+    const response = await fetch(imgElement.src);
+  const blob = await response.blob();
+  const filesArray = [
+    new File(
+      [blob],
+      'Genesis.jpg',
+      {
+        type: "image/jpeg",
+        lastModified: new Date().getTime()
+      }
+   )
+  ];
+//   const shareData = {
+//     files: filesArray,
+//   };
+
+
+    if (navigator.share) {
+        navigator.share({
+            files: filesArray,
+            title: "Bible Illustrated by AI",
+            text: verseText,
+            // file: imgElement.src,
+            url: "https://www.bibleillustratedbyai.com" // Compartilha o link da imagem
+        }).then(() => {
+            console.log("Compartilhamento bem-sucedido");
+        }).catch((error) => {
+            console.error("Erro ao compartilhar:", error);
+        });
+    } else {
+        alert("O compartilhamento não é suportado neste navegador.");
+    }
+}
