@@ -492,3 +492,14 @@ function bibleTranslation() {
             break;
     }
 }
+
+function EraseUserData() {
+    localStorage.clear();
+    alert("All user data was erased");
+    window.location="./index.html";
+    // setTimeout(3000,backToBible());
+}
+
+function backToBible(){
+    window.location="./index.html";
+}

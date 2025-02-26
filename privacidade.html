@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Bible illustrated by Artificial Intelligence</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p>Effective Date: 02/13/2025</p>
+    <!-- <p>Effective Date: 02/13/2025</p> -->
+    <div class="divCenter">
+        <button onclick="backToBible()" class="chapter">Back to the Bible</button>
+    </div>
     
     <h2>1. Introduction</h2>
     <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, and share your information when you use our app, "Bible illustrated by Artificial Intelligence".</p>
@@ -54,5 +58,19 @@
     
     <h2>9. Changes to This Privacy Policy</h2>
     <p>We may update this policy from time to time. Please review it periodically.</p>
+
+    <h2>10. Erase user data</h2>
+    <p>By pressing the button below, you will erase all your user data.</p>
+    <div class="divCenter">
+    <button id="eraseData" onclick="EraseUserData()">Erase all user data</button>
+    <br>
+    </div>
+
+    <div class="divCenter">
+    <button onclick="backToBible()" class="chapter">Back to the Bible</button>
+    </div>
+
+
 </body>
+<script src="./index.js"></script>
 </html>

@@ -317,3 +317,20 @@ dialog p {
 select{
     text-align: center;
 }
+
+.divCenter{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.voltar{
+    text-decoration: none;
+}
+
+#eraseData{
+    
+    background-color: red;
+
+}
+
