@@ -2,125 +2,212 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Important for mobile responsiveness -->
+    <!-- Mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google AdSense tag, if needed -->
+    <meta name="google-adsense-account" content="ca-pub-8048981882025505">
 
-    <!-- SEO: Description and Keywords -->
-    <meta name="description" content="Discover the Bible illustrated by Artificial Intelligence: read chapters and verses with unique AI-generated imagery.">
-    <meta name="keywords" content="Bible, Artificial Intelligence, Old Testament, New Testament, AI-generated illustrations, biblical verses">
+    <!-- SEO: Description and keywords -->
+    <meta name="description" content="Discover the Bible illustrated by Artificial Intelligence. Read and explore chapters and verses with AI-generated illustrations for a unique experience.">
+    <meta name="keywords" content="Bible, AI, Artificial Intelligence, Old Testament, New Testament, biblical illustrations">
 
-    <!-- Open Graph: improves appearance on social media -->
-    <meta property="og:title" content="Bible Illustrated by AI">
-    <meta property="og:description" content="Explore the Bible with AI-generated illustrations: read chapters and verses with unique interpretations by artificial intelligence.">
-    <meta property="og:image" content="./imgs/featured-image.jpg"> <!-- Example featured image -->
-    <meta property="og:url" content="https://yoursite.com"> <!-- Your actual site URL -->
+    <!-- Open Graph: social sharing -->
+    <meta property="og:title" content="AI Illustrated Bible - Bibliarte">
+    <meta property="og:description" content="Explore Bible passages illustrated by Artificial Intelligence, with a unique visual experience for each verse.">
+    <meta property="og:image" content="./imgs/icon/iconOriginal.png"> <!-- Example image -->
+    <meta property="og:url" content="https://www.bibliailustradaporia.com.br"> <!-- Site URL -->
     <meta property="og:type" content="website">
 
-    <!-- Twitter Cards (optional) -->
+    <!-- Twitter Cards, optional -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bible Illustrated by AI">
-    <meta name="twitter:description" content="Explore the Bible with AI-generated illustrations.">
-    <meta name="twitter:image" content="./imgs/featured-image.jpg">
+    <meta name="twitter:title" content="AI Illustrated Bible - Bibliarte">
+    <meta name="twitter:description" content="Discover a unique Bible reading experience with AI-generated illustrations.">
+    <meta name="twitter:image" content="./imgs/icon/iconOriginal.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./imgs/favicon/biblia.png">
+    
+    <!-- CSS and fonts -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Manrope:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./imgs/icons/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <!-- Fonts and CSS -->
-    <link rel="stylesheet" href="./fonts/fontsheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Page title -->
+    <title>AI Illustrated Bible - Bibliarte</title>
 
-    <title>Bible Illustrated by AI – Read the Bible with AI-generated Illustrations</title>
-
+    <!-- Site CSS -->
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <header>
-        <!-- Main heading of the site -->
+    <header id="mainHeader">
+        <!-- Main site heading -->
         <h1 class="font-reader">
-            Bible Illustrated by <span id="logo">Artificial Intelligence</span>
+           AI Illustrated <span id="logo">Bible</span>
         </h1>
-
+        <h3>Bibl<span id="logo">iart</span>e</h3>
+        <br>
         <nav>
-            <button class="chapter" onclick="HideOldTestament()">Old Testament</button>
-            <ul id="old-testament" style="display: none;">
-                <!-- Dynamically added book names go here -->
-            </ul>
-            <button class="chapter" onclick="HideNewTestament()">New Testament</button>
-            <ul id="new-testament" style="display: none;">
-                <!-- Dynamically added book names go here -->
-            </ul>
-
-            <div class="container" id="divChapters" style="display: none;">
-                <p>Chapters of <span id="bookName">Book</span></p>
-                <ul id="chapters"></ul>
+            <div class="selectGroup">
+                <label for="bookSelect">Book</label>
+                <select class="chapter" id="bookSelect" aria-label="Select book" style="font-size:1.2rem;"></select>
             </div>
-
-            <div class="container" id="divVerses" style="display: none;">
-                <p><span id="bookNameChapter">Book - </span></p>
-                <ul id="verses"></ul>
+            <div class="selectGroup">
+                <label for="chapterSelect">Chapter</label>
+                <select class="chapter" id="chapterSelect" aria-label="Select chapter" disabled style="font-size:1.2rem;"></select>
             </div>
-            <br>
-            <br>
+            <div class="selectGroup">
+                <label for="verseSelect">Verse</label>
+                <select class="chapter" id="verseSelect" aria-label="Select verse" disabled style="font-size:1.2rem;"></select>
+            </div>
+            <!-- <br><br>
             <div id="search">
                 <input class="chapterSmall" placeholder="Search..." type="search" id="busca" value="">
             </div>
+            <br><br> -->
         </nav>
     </header>
-
+    
     <main>
         <article>
-            <!-- Dialog for illustrations -->
+            <!-- Dialog to display the illustration -->
             <dialog id="DialogMain">
                 <fieldset>
                     <figure>
-                        <!-- Be sure to include alt text for accessibility and SEO -->
-                        <img class="ilustrated" id="imgSelected" src="./imgs/1_1_2.jpg" 
-                             alt="AI-generated biblical illustration">
+                        <!-- Alt attribute for accessibility and image SEO -->
+                        <img class="ilustrated" id="imgSelected" src="./imgs/1_1_2.jpg" alt="Biblical illustration generated by Artificial Intelligence">
                     </figure>
                     <p class="font-reader ilustrated" id="legenda"></p>
-                </fieldset>
+                </fieldset>     
                 <div class="dialogBtns">
                     <button class="chapterSpecial" onclick="closeDialog()">Back</button>
+                    <button onclick="shareVerse()" class="chapterSpecial">Share</button>
                 </div>
             </dialog>
 
-            <!-- Headings for content organization -->
-            <h2 class="font-reader" id="book">Book</h2>
-            <h3 class="font-reader" id="chapter"></h3>
-
+            <!-- Title and subtitle for the main content -->
+            <h1 class="font-reader" id="book">Book</h1>
+            <h2 class="font-reader" id="chapter"></h2>
             <div id="loader" class="loader"></div>
         </article>
     </main>
 
-    <div class="btns">
+    <!-- Chapter navigation -->
+    <!-- <div class="btns">
         <button onclick="PreviousChapter()" class="chapter">Previous Chapter</button>
         <button onclick="NextChapter()" class="chapter">Next Chapter</button>
-    </div>
+    </div> -->
 
     <footer>
-        <button onclick="darkMode()" class="chapterSmall">
+    <nav id="buttonBar">
+        <ul>
+            <li><button onclick="PreviousChapter()" class="chapter" aria-label="Previous Chapter"><i class="fa fa-arrow-left" aria-hidden="true" style="font-size:1.2rem;"></i></button></li>
+            <li><button onclick="NextChapter()" class="chapter" aria-label="Next Chapter"><i class="fa fa-arrow-right" aria-hidden="true" style="font-size:1.2rem;"></i></button></li>
+        </ul>
+        <ul>
+            <li><button onclick="darkMode()" class="chapterSmall" aria-label="Light/dark mode">
+            <i id="darkMode" class="fa fa-lightbulb-o lamp-off" style="font-size:2rem;" aria-hidden="true"></i>
+        </button></li>
+            <li>
+                <select id="fontSizeSelect" aria-label="Font size" class="chapterSmall" style="font-size:1.2rem;">
+                    <option value="0">A</option>
+                    <option value="1">A+</option>
+                    <option value="2">A++</option>
+                    <option value="3">A+++</option>
+                </select>
+            </li>
+            <li><select onchange="bibleTranslation()" name="version" id="version" class="chapterSmall" style="font-size:1.2rem;">
+            <option value="builtin-kjv">KJV - King James Version</option>
+            <option value="builtin-bbe">BBE - Bible in Basic English</option>
+            <option value="asv.json">ASV - American Standard Version</option>
+            <option value="bishops.json">Bishops - Bishops Bible</option>
+            <option value="coverdale.json">Coverdale - Coverdale Bible</option>
+            <option value="geneva.json">Geneva - Geneva Bible</option>
+            <option value="kjvpce.json">KJV PCE - Authorized King James Version - PCE</option>
+            <option value="net.json">NET - NET Bible</option>
+            <option value="tyndale.json">Tyndale - Tyndale Bible</option>
+            <option value="web.json">WEB - World English Bible</option>
+        </select></li>
+            <li><button onclick="goToInfo()" class="chapterSmall" aria-label="Suggestions"><i class="fa fa-commenting" aria-hidden="true" style="font-size:2rem;"></i></button></li>
+        </ul>
+    </nav>
+    </footer>
+    <!-- <footer> -->
+        <!-- Dark/light mode control -->
+        <!-- <label for="darkMode" id="lblDarkMode">Enable Light Mode</label> -->
+        <!-- <br> -->
+        <!-- <button onclick="darkMode()" class="chapterSmall">
             <i id="darkMode" class="fa fa-toggle-on" style="font-size:2rem;"></i>
-        </button>
-        <br>
-        <label for="darkMode" id="lblDarkMode">Activate Light Mode</label>
-        <br>
-        <label for="version">Choose a Bible translation:</label>
-        <select class="chapter" onchange="bibleTranslation()" name="version" id="version">
-            <option value="bbe">Bible In Basic English - BBE</option>
-            <option value="kjv">King James Version - KJV</option>
-        </select>
+        </button> -->
+        <!-- <br><br> -->
 
-        <p id="Created">Created by Lennon Sales Furtado – Bible Illustrated by AI – All rights reserved</p>
+        <!-- Bible version selection -->
+        <!-- <label for="version">Choose the translation:</label>
+        <br> -->
+        <!-- <select class="chapter" onchange="bibleTranslation()" name="version" id="version">
+            <option value="kjv">King James Version</option>
+            <option value="bbe">Bible in Basic English</option>
+        </select> -->
+        <!-- <br><br> -->
+
+        <!-- <p>Version 1.62 - Improved SEO</p>
+        <p>Any suggestions? Contact me on social media:</p> -->
+        
+        <!-- Social media links -->
+        <!-- <a href="https://www.facebook.com/lennon.sfurtado" class="fa fa-facebook-official w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://www.instagram.com/lennonsfurtado/" class="fa fa-instagram w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://github.com/Biosdead" class="fa fa-github w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://biosdead.github.io/portifolio/" class="fa fa-language w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://www.linkedin.com/in/lennonsfurtado-engsoft/" class="fa fa-linkedin w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a> -->
+        
+        <!-- Footer information -->
+        <!-- <p id="Criado">Created by Lennon Sales Furtado - AI Illustrated Bible - All rights reserved</p>
         <script>
             const date = new Date(); 
-            document.getElementById("Created").innerText += " – " + date.getFullYear();
+            document.getElementById("Criado").innerText += " - " + date.getFullYear();
         </script>
-        <a href="./privacidade.html">Privacy Policy</a>
-    </footer>
+        <p id="imagensGeradas">All images were generated using ChatGPT 4.0</p>
+        <a href="./privacidade.html"><small>Privacy Policy</small></a>
+    </footer> -->
 
-    <!-- Load scripts at the end to improve page performance -->
+    <!-- Scripts placed at the end to improve performance -->
     <script src="./jsons/en/kjv.js"></script>
     <script src="./jsons/en/bbe.js"></script>
     <script src="./index.js"></script>
+    <script>
+    let lastScrollTop = 0;
+    const buttonBar = document.getElementById("buttonBar");
+    const topBar = document.getElementById("mainHeader");
+
+    window.addEventListener("scroll", function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        // Scrolling down -> hide bars
+        buttonBar.classList.add("hidden");
+        topBar.classList.add("hidden");
+      } else {
+        // Scrolling up -> show bars
+        buttonBar.classList.remove("hidden");
+        topBar.classList.remove("hidden");
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // avoids negative values
+    });
+
+    const mainContent = document.querySelector("main");
+    if (mainContent) {
+      mainContent.addEventListener("click", function() {
+        const isHidden = buttonBar.classList.contains("hidden") && topBar.classList.contains("hidden");
+        if (isHidden) {
+          buttonBar.classList.remove("hidden");
+          topBar.classList.remove("hidden");
+        } else {
+          buttonBar.classList.add("hidden");
+          topBar.classList.add("hidden");
+        }
+      });
+    }
+    </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿var bibleKJV = [
+﻿var bibleEnglish = [
   {
     abbrev: "gn",
     chapters: [

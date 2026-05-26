@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google AdSense tag, if needed -->
+    <meta name="google-adsense-account" content="ca-pub-8048981882025505">
+
+    <!-- SEO: Description and keywords -->
+    <meta name="description" content="Discover the Bible illustrated by Artificial Intelligence. Read and explore chapters and verses with AI-generated illustrations for a unique experience.">
+    <meta name="keywords" content="Bible, AI, Artificial Intelligence, Old Testament, New Testament, biblical illustrations">
+
+    <!-- Open Graph: social sharing -->
+    <meta property="og:title" content="AI Illustrated Bible - Bibliarte">
+    <meta property="og:description" content="Explore Bible passages illustrated by Artificial Intelligence, with a unique visual experience for each verse.">
+    <meta property="og:image" content="./imgs/icon/iconOriginal.png"> <!-- Example image -->
+    <meta property="og:url" content="https://www.bibliailustradaporia.com.br"> <!-- Site URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards, optional -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Illustrated Bible - Bibliarte">
+    <meta name="twitter:description" content="Discover a unique Bible reading experience with AI-generated illustrations.">
+    <meta name="twitter:image" content="./imgs/icon/iconOriginal.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./imgs/favicon/biblia.png">
+    
+    <!-- CSS and fonts -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Manrope:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="./imgs/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- Page title -->
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="index.css">
+    <title>Info</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5efe6 0%, #fdf6e3 45%, #f1e8d3 100%);
+            color: #2c2c2c;
+        }
+
+        .info-page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 6rem;
+            position: relative;
+        }
+
+        .info-page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 10%, rgba(0, 128, 128, 0.12), transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.8rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-family: "Poetsen One", "Roboto", sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            line-height: 1.6;
+            color: #ffffff;
+        }
+
+        .hero-card {
+            background: #fffaf1;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        #profileImg {
+            border-radius: 16px;
+            border: 6px solid #e2d8c3;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .hero-actions .chapter {
+            min-width: auto;
+            padding: 0.6rem 1.2rem;
+        }
+
+        .highlights {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+
+        .highlights li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .highlights i {
+            color: teal;
+        }
+
+        .section {
+            margin-top: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section h2 {
+            font-family: "Poetsen One", "Roboto", sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .section p {
+            line-height: 1.6;
+        }
+
+        .suggestion-form {
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 1rem;
+            background: #fffaf1;
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.4rem;
+        }
+
+        .suggestion-form input,
+        .suggestion-form select,
+        .suggestion-form textarea {
+            width: 100%;
+            border-radius: 14px;
+            border: 2px solid #d3c6a8;
+            padding: 0.65rem 0.8rem;
+            font-family: "Roboto", sans-serif;
+            font-size: 1rem;
+            background: #fffdf8;
+        }
+
+        .suggestion-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-hint {
+            font-size: 0.9rem;
+            color: #4b5f5f;
+        }
+
+        .submit-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .submit-row button {
+            background: teal;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            padding: 0.7rem 1.4rem;
+            font-weight: 600;
+        }
+
+        .guidelines {
+            display: grid;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .guidelines li {
+            margin-left: 1rem;
+        }
+
+        @media (max-width: 720px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        #buttonBar {
+            z-index: 999;
+        }
+
+        #buttonBar ul {
+            display: flex;
+        }
+
+        #buttonBar ul li {
+            width: 50%;
+        }
+
+        footer,
+        footer p,
+        footer a,
+        footer small {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="info-page">
+
+        <section class="section" id="suggestions">
+            <h2>Suggest images and adjustments</h2>
+            <p>
+                Want to see an illustrated chapter, suggest a biblical scene, or correct an existing image?
+                Fill out the form below. When you submit it, your email app will open
+                with all the details filled in for direct delivery to my address.
+            </p>
+
+            <form class="suggestion-form" action="mailto:lennonsfurtado@gmail.com?subject=AI%20Illustrated%20Bible%20Suggestion" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="nome">Your name</label>
+                    <input type="text" id="nome" name="Name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your email</label>
+                    <input type="email" id="email" name="Email" placeholder="you@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Request type</label>
+                    <select id="tipo" name="Type">
+                        <option value="New image">New image for a chapter</option>
+                        <option value="Adjustment">Adjustment to an existing image</option>
+                        <option value="Suggestion">General suggestion</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="referencia">Book, chapter, and verse</label>
+                    <input type="text" id="referencia" name="Reference" placeholder="Ex.: Genesis 1:1-5" required>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Describe the image or adjustment you want</label>
+                    <textarea id="descricao" name="Description" placeholder="Describe what you imagine, style, important details..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="link">Reference link (optional)</label>
+                    <input type="url" id="link" name="Link" placeholder="https://">
+                </div>
+                <p class="form-hint">For attachments, share a public link (Drive, Dropbox, etc.).</p>
+                <div class="submit-row">
+                    <button type="submit">Send suggestion</button>
+                    <span class="form-hint">Submitting opens your email app.</span>
+                </div>
+            </form>
+        </section>
+
+        <section class="section guidelines">
+            <h2>Best practices for suggestions</h2>
+            <ul>
+                <li>Describe the mood of the scene (light, emotion, period, setting).</li>
+                <li>Say whether you prefer a more classic, realistic, or illustrated style.</li>
+                <li>Explain any biblical detail that must be included.</li>
+                <li>Tell me if the suggestion is meant to correct something already published.</li>
+            </ul>
+        </section>
+
+        <!-- <header class="hero">
+            <div>
+                <p class="eyebrow">Who developed it</p>
+                <h1>Lennon Sales Furtado</h1>
+                <p>
+                    PhD in Computer Science (UFPA), EBTT professor at the Federal Institute of Para (IFPA),
+                    and an enthusiast of the intersection between faith, technology, and visual storytelling.
+                    AI Illustrated Bible - Bibliarte was born from the desire to make reading more immersive,
+                    accessible, and inspiring.
+                </p>
+                <div class="hero-actions">
+                    
+                </div>
+            </div>
+            <div class="hero-card">
+                <img id="profileImg" src="./imgs/profile/perfilBW.png" alt="Photo of Lennon Sales Furtado">
+                <ul class="highlights">
+                    <li><i class="fa fa-graduation-cap" aria-hidden="true"></i> PhD and Master's in Computer Science</li>
+                    <li><i class="fa fa-gamepad" aria-hidden="true"></i> Digital games and gamification</li>
+                    <li><i class="fa fa-paint-brush" aria-hidden="true"></i> Applied information visualization</li>
+                    <li><i class="fa fa-code" aria-hidden="true"></i> Software engineering and process improvement</li>
+                </ul>
+            </div>
+        </header> -->
+    </main>
+
+    <nav id="buttonBar" aria-label="Quick menu">
+        <ul>
+            <li><button onclick="backToBible()" class="chapter" aria-label="Back"><i class="fa fa-book" aria-hidden="true" style="font-size:2rem;"></i></button></li>
+            <li><button onclick="goToSuggestions()" class="chapter" aria-label="Suggestions"><i class="fa fa-commenting" aria-hidden="true" style="font-size:2rem;"></i></button></li>
+        </ul>
+    </nav>
+</body>
+<footer>
+     <p>Version 2.0 - Improved Sharing</p>
+        <p>Any suggestions? Contact me on social media:</p>
+        
+        <!-- Social media links -->
+        <a href="https://www.facebook.com/lennon.sfurtado" class="fa fa-facebook-official w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://www.instagram.com/lennonsfurtado/" class="fa fa-instagram w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://github.com/Biosdead" class="fa fa-github w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://biosdead.github.io/portifolio/" class="fa fa-language w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        <a href="https://www.linkedin.com/in/lennonsfurtado-engsoft/" class="fa fa-linkedin w3-hover-opacity" style="font-size: xx-large; text-decoration: none;"></a>
+        
+        <!-- Footer information -->
+        <p id="Criado">Created by Lennon Sales Furtado - AI Illustrated Bible - Bibliarte - All rights reserved</p>
+        <script>
+            const date = new Date(); 
+            document.getElementById("Criado").innerText += " - " + date.getFullYear();
+        </script>
+        <p id="imagensGeradas">All images were generated using ChatGPT</p>
+        <a href="./privacidade.html"><small>Privacy Policy</small></a>
+    </footer>
+
+<script src="./index.js"></script>
+<script>
+    function goToSuggestions() {
+        const section = document.getElementById("suggestions");
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+
+    function goToEmail() {
+        window.location.href = "mailto:lennonsfurtado@gmail.com";
+    }
+
+    let lastScrollTop = 0;
+    const navbar = document.getElementById("buttonBar");
+
+    window.addEventListener("scroll", function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        navbar.classList.add("hidden");
+      } else {
+        navbar.classList.remove("hidden");
+      }
+
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+</html>
